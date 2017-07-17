@@ -1,6 +1,8 @@
 package yahoofinance.quotes.stock;
 
-import yahoofinance.quotes.*;
+import yahoofinance.quotes.QuotesProperty;
+import yahoofinance.quotes.QuotesRequest;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,6 +106,10 @@ public class StockQuotesRequest extends QuotesRequest<StockQuotesData> {
         super(query, StockQuotesRequest.DEFAULT_PROPERTIES);
     }
 
+    int tokenStart = 0;
+    int tokenEnd = 0;
+    int skip = 2;
+
     @Override
     protected StockQuotesData parseCSVLine(String line) {
         List<String> parsedLine = new ArrayList<String>();
@@ -111,73 +117,71 @@ public class StockQuotesRequest extends QuotesRequest<StockQuotesData> {
         // first get company name, symbol, currency and exchange
         // because we need the symbol and currency or exchange might be the same as the symbol!
         // pretty ugly code due to the bad format of the csv
-        int pos1 = 0;
-        int pos2 = 0;
-        int skip = 2;
+
         
         if(line.startsWith("\"")) {
-            pos1 = 1; // skip first \"
-            pos2 = line.indexOf('\"', 1);
+            tokenStart = 1; // skip first \"
+            tokenEnd = line.indexOf('\"', 1);
         } else {
-            pos2 = line.indexOf(",\""); // last comma before the first symbol (hopefully)
+            tokenEnd = line.indexOf(",\""); // last comma before the first symbol (hopefully)
             skip = 1;
         }
-        
-        String name = line.substring(pos1, pos2);
-        pos1 = pos2 + skip; // skip \",
-        pos2 = line.indexOf('\"', pos1 + 1);
+        String name = line.substring(tokenStart, tokenEnd);
+
+        tokenStart = tokenEnd + skip; // skip \",
+        tokenEnd = line.indexOf('\"', tokenStart + 1);
         skip = 2;
-        String fullSymbol = line.substring(pos1, pos2 + 1);
+        String fullSymbol = line.substring(tokenStart, tokenEnd + 1);
         String symbol = fullSymbol.substring(1, fullSymbol.length() - 1);
 
-        pos1 = pos2 + skip;
-        if (line.charAt(pos1) == '\"') {
-            pos1 += 1;
-            pos2 = line.indexOf('\"', pos1);
+        tokenStart = tokenEnd + skip;
+        if (line.charAt(tokenStart) == '\"') {
+            tokenStart += 1;
+            tokenEnd = line.indexOf('\"', tokenStart);
             skip = 2;
         } else {
-            pos2 = line.indexOf(',', pos1);
+            tokenEnd = line.indexOf(',', tokenStart);
             skip = 1;
         }
-        String currency = line.substring(pos1, pos2);
-        
-        pos1 = pos2 + skip;
-        if (line.charAt(pos1) == '\"') {
-            pos1 += 1;
-            pos2 = line.indexOf('\"', pos1);
+        String currency = line.substring(tokenStart, tokenEnd);
+
+        tokenStart = tokenEnd + skip;
+        if (line.charAt(tokenStart) == '\"') {
+            tokenStart += 1;
+            tokenEnd = line.indexOf('\"', tokenStart);
             skip = 2;
         } else {
-            pos2 = line.indexOf(',', pos1);
+            tokenEnd = line.indexOf(',', tokenStart);
             skip = 1;
         }
-        String exchange = line.substring(pos1, pos2);
+        String exchange = line.substring(tokenStart, tokenEnd);
         
         parsedLine.add(name);
         parsedLine.add(symbol);
         parsedLine.add(currency);
         parsedLine.add(exchange);
 
-        pos1 = pos2 + skip; // skip \",
-        for (; pos1 < line.length(); pos1++) {
-            if (line.startsWith(fullSymbol, pos1)) {
+        tokenStart = tokenEnd + skip; // skip \",
+        for (; tokenStart < line.length(); tokenStart++) {
+            if (line.startsWith(fullSymbol, tokenStart)) {
                 parsedLine.add(symbol);
-                pos1 = pos1 + fullSymbol.length() + 1; // immediately skip the , as well
-                pos2 = line.indexOf(fullSymbol, pos1) - 1; // don't include last ,
-                parsedLine.add(line.substring(pos1, pos2));
+                tokenStart = tokenStart + fullSymbol.length() + 1; // immediately skip the , as well
+                tokenEnd = line.indexOf(fullSymbol, tokenStart) - 1; // don't include last ,
+                parsedLine.add(line.substring(tokenStart, tokenEnd));
                 parsedLine.add(symbol);
-                pos1 = pos2 + fullSymbol.length() + 1;
-            } else if (line.charAt(pos1) == '\"') {
-                pos1 += 1;
-                pos2 = line.indexOf('\"', pos1);
-                parsedLine.add(line.substring(pos1, pos2));
-                pos1 = pos2 + 1;
-            } else if (line.charAt(pos1) != ',') {
-                pos2 = line.indexOf(',', pos1);
-                if (pos2 <= pos1) {
-                    pos2 = line.length();
+                tokenStart = tokenEnd + fullSymbol.length() + 1;
+            } else if (line.charAt(tokenStart) == '\"') {
+                tokenStart += 1;
+                tokenEnd = line.indexOf('\"', tokenStart);
+                parsedLine.add(line.substring(tokenStart, tokenEnd));
+                tokenStart = tokenEnd + 1;
+            } else if (line.charAt(tokenStart) != ',') {
+                tokenEnd = line.indexOf(',', tokenStart);
+                if (tokenEnd <= tokenStart) {
+                    tokenEnd = line.length();
                 }
-                parsedLine.add(line.substring(pos1, pos2));
-                pos1 = pos2;
+                parsedLine.add(line.substring(tokenStart, tokenEnd));
+                tokenStart = tokenEnd;
             }
         }
         return new StockQuotesData(parsedLine.toArray(new String[this.properties.size()]));
