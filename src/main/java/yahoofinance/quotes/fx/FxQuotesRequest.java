@@ -1,12 +1,13 @@
 
 package yahoofinance.quotes.fx;
 
-import java.util.ArrayList;
-import java.util.List;
 import yahoofinance.Utils;
 import yahoofinance.YahooFinance;
 import yahoofinance.quotes.QuotesProperty;
 import yahoofinance.quotes.QuotesRequest;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -16,8 +17,8 @@ public class FxQuotesRequest extends QuotesRequest<FxQuote> {
     
     public static final List<QuotesProperty> DEFAULT_PROPERTIES = new ArrayList<QuotesProperty>();
     static {
-        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
-        DEFAULT_PROPERTIES.add(QuotesProperty.LastTradePriceOnly);
+        DEFAULT_PROPERTIES.add(QuotesProperty.SYMBOL);
+        DEFAULT_PROPERTIES.add(QuotesProperty.LAST_TRADE_PRICE_ONLY);
     }
     
     public FxQuotesRequest(String query) {

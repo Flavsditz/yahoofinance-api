@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 
-import static yahoofinance.quotes.QuotesProperty.Symbol;
+import static yahoofinance.quotes.QuotesProperty.SYMBOL;
 
 /**
  *
@@ -39,9 +39,9 @@ public abstract class QuotesRequest<T> {
         StringBuilder result = new StringBuilder();
         for (QuotesProperty property : this.properties) {
             if (property.isPadded()) {
-                result.append(Symbol.getTag());
+                result.append(SYMBOL.getTag());
                 result.append(property.getTag());
-                result.append(Symbol.getTag());
+                result.append(SYMBOL.getTag());
             } else {
                 result.append(property.getTag());
             }
