@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>yahoofinance.quotes.stock.StockStats</OriginalElement>
+  <nodes>
+    <node x="911.91408045977" y="0.0">yahoofinance.histquotes.HistoricalQuote</node>
+    <node x="939.2024425287354" y="180.0">yahoofinance.Stock</node>
+    <node x="1080.9974137931033" y="90.0">yahoofinance.quotes.stock.StockQuote</node>
+    <node x="1047.0" y="554.0">yahoofinance.Utils</node>
+    <node x="441.0" y="554.0">yahoofinance.exchanges.ExchangeTimeZone</node>
+    <node x="705.4974137931033" y="0.0">yahoofinance.histquotes.Interval</node>
+    <node x="867.9974137931033" y="90.0">yahoofinance.histquotes2.HistQuotes2Request</node>
+    <node x="251.64295977011466" y="370.0">yahoofinance.quotes.stock.StockQuotesRequest</node>
+    <node x="1.25" y="280.0">yahoofinance.quotes.fx.FxQuote</node>
+    <node x="21.774999999999864" y="370.0">yahoofinance.quotes.fx.FxQuotesRequest</node>
+    <node x="1089.91408045977" y="0.0">yahoofinance.histquotes2.QueryInterval</node>
+    <node x="677.0" y="554.0">yahoofinance.histquotes2.IntervalMapper</node>
+    <node x="167.93491379310336" y="450.0">yahoofinance.YahooFinance</node>
+    <node x="664.9974137931033" y="90.0">yahoofinance.histquotes.HistQuotesRequest</node>
+    <node x="160.99295977011468" y="180.0">yahoofinance.quotes.QuotesProperty</node>
+    <node x="1071.6224137931033" y="280.0">yahoofinance.quotes.stock.StockQuotesData</node>
+    <node x="878.0" y="554.0">yahoofinance.quotes.fx.FxSymbols</node>
+    <node x="484.43491379310336" y="90.0">yahoofinance.histquotes2.CrumbManager</node>
+    <node x="342.43491379310336" y="90.0">yahoofinance.quotes.stock.StockStats</node>
+    <node x="1230.9974137931033" y="90.0">yahoofinance.quotes.stock.StockDividend</node>
+    <node x="177.03491379310339" y="280.0">yahoofinance.quotes.QuotesRequest</node>
+    <node x="431.1969827586206" y="0.0">yahoofinance.util.RedirectableRequest</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="yahoofinance.quotes.stock.StockQuotesRequest" target="yahoofinance.quotes.stock.StockQuotesData">
+      <point x="78.0" y="-15.0" />
+      <point x="427.14295977011466" y="350.0" />
+      <point x="1157.1224137931033" y="350.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.histquotes2.CrumbManager" target="yahoofinance.util.RedirectableRequest">
+      <point x="0.0" y="-15.0" />
+      <point x="563.9349137931033" y="70.0" />
+      <point x="505.0719827586206" y="70.0" />
+      <point x="-24.625" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.quotes.stock.StockQuotesRequest" target="yahoofinance.quotes.QuotesProperty">
+      <point x="0.0" y="-15.0" />
+      <point x="349.14295977011466" y="330.0" />
+      <point x="398.64295977011466" y="330.0" />
+      <point x="398.64295977011466" y="250.0" />
+      <point x="303.1929597701147" y="250.0" />
+      <point x="63.200000000000045" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.quotes.stock.StockQuotesRequest" target="yahoofinance.quotes.QuotesRequest">
+      <point x="-39.0" y="-15.0" />
+      <point x="310.14295977011466" y="350.0" />
+      <point x="294.0349137931034" y="350.0" />
+      <point x="39.0" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.YahooFinance" target="yahoofinance.quotes.stock.StockQuotesRequest">
+      <point x="37.25" y="-15.0" />
+      <point x="279.68491379310336" y="425.0" />
+      <point x="349.14295977011466" y="425.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.quotes.fx.FxQuotesRequest" target="yahoofinance.quotes.QuotesRequest">
+      <point x="68.79999999999995" y="-15.0" />
+      <point x="176.57499999999982" y="350.0" />
+      <point x="216.03491379310339" y="350.0" />
+      <point x="-39.0" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.Stock" target="yahoofinance.histquotes.HistQuotesRequest">
+      <point x="-21.75" y="-15.0" />
+      <point x="960.9524425287354" y="150.0" />
+      <point x="756.4974137931033" y="150.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.histquotes.HistQuotesRequest" target="yahoofinance.util.RedirectableRequest">
+      <point x="-61.0" y="-15.0" />
+      <point x="695.4974137931033" y="60.0" />
+      <point x="554.3219827586206" y="60.0" />
+      <point x="24.625" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.histquotes2.HistQuotes2Request" target="yahoofinance.util.RedirectableRequest">
+      <point x="-64.0" y="-15.0" />
+      <point x="899.9974137931033" y="50.0" />
+      <point x="603.5719827586206" y="50.0" />
+      <point x="73.875" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.quotes.QuotesRequest" target="yahoofinance.quotes.QuotesProperty">
+      <point x="-39.0" y="-15.0" />
+      <point x="216.03491379310339" y="260.0" />
+      <point x="271.5929597701146" y="260.0" />
+      <point x="31.59999999999991" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.Stock" target="yahoofinance.quotes.stock.StockStats">
+      <point x="-36.25" y="-15.0" />
+      <point x="946.4524425287354" y="160.0" />
+      <point x="433.93491379310336" y="160.0" />
+      <point x="30.5" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.Stock" target="yahoofinance.quotes.stock.StockQuote">
+      <point x="21.75" y="-15.0" />
+      <point x="1004.4524425287354" y="150.0" />
+      <point x="1113.4974137931033" y="150.0" />
+      <point x="-32.5" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.Stock" target="yahoofinance.quotes.stock.StockDividend">
+      <point x="36.25" y="-15.0" />
+      <point x="1018.9524425287354" y="160.0" />
+      <point x="1268.4974137931033" y="160.0" />
+      <point x="-37.5" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.quotes.stock.StockQuotesData" target="yahoofinance.quotes.stock.StockDividend">
+      <point x="64.125" y="-15.0" />
+      <point x="1221.2474137931033" y="260.0" />
+      <point x="1343.4974137931033" y="260.0" />
+      <point x="37.5" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.Stock" target="yahoofinance.histquotes2.HistQuotes2Request">
+      <point x="-7.25" y="-15.0" />
+      <point x="975.4524425287354" y="140.0" />
+      <point x="963.9974137931033" y="140.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.Stock" target="yahoofinance.quotes.stock.StockQuotesRequest">
+      <point x="-21.75" y="15.0" />
+      <point x="960.9524425287354" y="340.0" />
+      <point x="388.14295977011466" y="340.0" />
+      <point x="39.0" y="-15.0" />
+    </edge>
+    <edge source="yahoofinance.quotes.QuotesRequest" target="yahoofinance.util.RedirectableRequest">
+      <point x="39.0" y="-15.0" />
+      <point x="294.0349137931034" y="260.0" />
+      <point x="331.93491379310336" y="260.0" />
+      <point x="331.93491379310336" y="70.0" />
+      <point x="455.8219827586206" y="70.0" />
+      <point x="-73.875" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.histquotes.HistQuotesRequest" target="yahoofinance.histquotes.Interval">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.histquotes.HistQuotesRequest" target="yahoofinance.histquotes.HistoricalQuote">
+      <point x="61.0" y="-15.0" />
+      <point x="817.4974137931033" y="70.0" />
+      <point x="938.2474137931033" y="70.0" />
+      <point x="-52.666666666666686" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.histquotes2.HistQuotes2Request" target="yahoofinance.histquotes2.QueryInterval">
+      <point x="64.0" y="-15.0" />
+      <point x="1027.9974137931033" y="70.0" />
+      <point x="1162.41408045977" y="70.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.quotes.fx.FxQuote" target="yahoofinance.quotes.fx.FxQuotesRequest">
+      <point x="26.75" y="15.0" />
+      <point x="81.5" y="350.0" />
+      <point x="73.37499999999977" y="350.0" />
+      <point x="-34.40000000000009" y="-15.0" />
+    </edge>
+    <edge source="yahoofinance.quotes.stock.StockQuotesData" target="yahoofinance.quotes.stock.StockStats">
+      <point x="-64.125" y="-15.0" />
+      <point x="1092.9974137931033" y="240.0" />
+      <point x="372.93491379310336" y="240.0" />
+      <point x="-30.5" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.histquotes2.HistQuotes2Request" target="yahoofinance.histquotes.HistoricalQuote">
+      <point x="0.0" y="-15.0" />
+      <point x="963.9974137931033" y="70.0" />
+      <point x="990.91408045977" y="70.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.YahooFinance" target="yahoofinance.quotes.fx.FxQuotesRequest">
+      <point x="-37.25" y="-15.0" />
+      <point x="205.18491379310336" y="425.0" />
+      <point x="107.77499999999986" y="425.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.quotes.fx.FxQuotesRequest" target="yahoofinance.quotes.fx.FxQuote">
+      <point x="-68.79999999999995" y="-15.0" />
+      <point x="38.97499999999991" y="350.0" />
+      <point x="28.0" y="350.0" />
+      <point x="-26.75" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.quotes.stock.StockQuotesData" target="yahoofinance.quotes.stock.StockQuote">
+      <point x="21.375" y="-15.0" />
+      <point x="32.5" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.quotes.stock.StockQuotesData" target="yahoofinance.Stock">
+      <point x="-21.375" y="-15.0" />
+      <point x="1135.7474137931033" y="230.0" />
+      <point x="1004.4524425287354" y="230.0" />
+      <point x="21.75" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.Stock" target="yahoofinance.histquotes.HistoricalQuote">
+      <point x="7.25" y="-15.0" />
+      <point x="989.9524425287354" y="140.0" />
+      <point x="1070.4974137931033" y="140.0" />
+      <point x="1070.4974137931033" y="60.0" />
+      <point x="1043.5807471264366" y="60.0" />
+      <point x="52.666666666666686" y="15.0" />
+    </edge>
+    <edge source="yahoofinance.quotes.fx.FxQuotesRequest" target="yahoofinance.quotes.QuotesProperty">
+      <point x="0.0" y="-15.0" />
+      <point x="107.77499999999986" y="350.0" />
+      <point x="118.75" y="350.0" />
+      <point x="118.75" y="230.0" />
+      <point x="176.79295977011463" y="230.0" />
+      <point x="-63.200000000000045" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="690.5" y="292.0" />
+  <SelectedNodes>
+    <node>yahoofinance.quotes.stock.StockStats</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
