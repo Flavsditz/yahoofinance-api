@@ -26,12 +26,6 @@ public class StockQuotesRequest extends QuotesRequest<StockQuotesData> {
      */
     private static final String PADDING = "***";
 
-    static {
-
-        // Always keep the name and symbol in first and second place respectively!
-
-    }
-    
     public StockQuotesRequest(String query) {
         super(query, StockProperties.getDefaultProperties());
     }
