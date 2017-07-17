@@ -26,6 +26,7 @@ public class StockQuotesRequest extends QuotesRequest<StockQuotesData> {
      *
      */
     public static final List<QuotesProperty> DEFAULT_PROPERTIES = new ArrayList<QuotesProperty>();
+    private static final String PADDING = "***";
 
     static {
 
@@ -36,165 +37,240 @@ public class StockQuotesRequest extends QuotesRequest<StockQuotesData> {
         DEFAULT_PROPERTIES.add(QuotesProperty.Currency);
         DEFAULT_PROPERTIES.add(QuotesProperty.StockExchange);
 
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.Ask);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.AskRealtime);
+
         DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.AskSize);
         DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.Bid);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.BidRealtime);
+
         DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.BidSize);
         DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
 
         DEFAULT_PROPERTIES.add(QuotesProperty.LastTradePriceOnly);
+
         DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.LastTradeSize);
         DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
         DEFAULT_PROPERTIES.add(QuotesProperty.LastTradeDate);
         DEFAULT_PROPERTIES.add(QuotesProperty.LastTradeTime);
 
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.Open);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.PreviousClose);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.DaysLow);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.DaysHigh);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
 
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.Volume);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.AverageDailyVolume);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
 
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.YearHigh);
-        DEFAULT_PROPERTIES.add(QuotesProperty.YearLow);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
 
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+        DEFAULT_PROPERTIES.add(QuotesProperty.YearLow);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.FiftydayMovingAverage);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.TwoHundreddayMovingAverage);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
 
         DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.SharesOutstanding);
         DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
         DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.SharesOwned);
         DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.MarketCapitalization);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
         DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.SharesFloat);
         DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
 
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.DividendPayDate);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.ExDividendDate);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.TrailingAnnualDividendYield);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.TrailingAnnualDividendYieldInPercent);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
 
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.DilutedEPS);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.EPSEstimateCurrentYear);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.EPSEstimateNextQuarter);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.EPSEstimateNextYear);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.PERatio);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.PEGRatio);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
 
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.PriceBook);
-        DEFAULT_PROPERTIES.add(QuotesProperty.PriceSales);
-        DEFAULT_PROPERTIES.add(QuotesProperty.BookValuePerShare);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
 
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+        DEFAULT_PROPERTIES.add(QuotesProperty.PriceSales);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+        DEFAULT_PROPERTIES.add(QuotesProperty.BookValuePerShare);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.Revenue);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.EBITDA);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.OneyrTargetPrice);
-        
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
+
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
         DEFAULT_PROPERTIES.add(QuotesProperty.ShortRatio);
+        DEFAULT_PROPERTIES.add(QuotesProperty.Symbol);
     }
     
     public StockQuotesRequest(String query) {
         super(query, StockQuotesRequest.DEFAULT_PROPERTIES);
     }
 
-    int tokenStart = 0;
-    int tokenEnd = 0;
-    int skip = 2;
+    List<String> parsedLine = new ArrayList<String>();
 
     @Override
     protected StockQuotesData parseCSVLine(String line) {
-        List<String> parsedLine = new ArrayList<String>();
-        
-        // first get company name, symbol, currency and exchange
-        // because we need the symbol and currency or exchange might be the same as the symbol!
-        // pretty ugly code due to the bad format of the csv
+        line = parseNextToken(line);
+        line = parseCompanyTicker(line);
 
-
-        if(line.startsWith("\"")) {
-            tokenStart += 1;
-            tokenEnd = line.indexOf('\"', tokenStart);
-            skip = 2;
-        } else {
-            tokenEnd = line.indexOf(",\"", tokenStart); // last comma before the first symbol (hopefully)
-            skip = 1;
-        }
-        String name = line.substring(tokenStart, tokenEnd);
-        line = line.substring(tokenEnd + skip);
-        tokenStart = 0;
-
-        tokenEnd = line.indexOf('\"', tokenStart + 1);
-        skip = 2;
-        String fullSymbol = line.substring(tokenStart, tokenEnd + 1);
-        String symbol = fullSymbol.substring(1, fullSymbol.length() - 1);
-
-        line = line.substring(tokenEnd + skip);
-        tokenStart = 0;
-        if (line.startsWith("\"")) {
-            tokenStart += 1;
-            tokenEnd = line.indexOf('\"', tokenStart);
-            skip = 2;
-        } else {
-            tokenEnd = line.indexOf(',', tokenStart);
-            skip = 1;
-        }
-        String currency = line.substring(tokenStart, tokenEnd);
-
-        line = line.substring(tokenEnd + skip);
-        tokenStart = 0;
-        if (line.startsWith("\"")) {
-            tokenStart += 1;
-            tokenEnd = line.indexOf('\"', tokenStart);
-            skip = 2;
-        } else {
-            tokenEnd = line.indexOf(',', tokenStart);
-            skip = 1;
-        }
-        String exchange = line.substring(tokenStart, tokenEnd);
-        
-        parsedLine.add(name);
-        parsedLine.add(symbol);
-        parsedLine.add(currency);
-        parsedLine.add(exchange);
-
-        line = line.substring(tokenEnd + skip);
-        tokenStart = 0;
-        for (; tokenEnd + 2 > line.length(); tokenStart = 0) {
-            line = line.substring(tokenEnd + skip);
-
-            if (line.startsWith(fullSymbol, tokenStart)) {
-                tokenStart = fullSymbol.length() + 1; // skip symbol
-                tokenEnd = line.indexOf(fullSymbol, tokenStart) - 1; // don't include last ,
-
-                parsedLine.add(symbol);
-                parsedLine.add(line.substring(tokenStart, tokenEnd));
-                parsedLine.add(symbol);
-
-                tokenEnd += fullSymbol.length();
-                skip = 2;
-            } else if (line.startsWith("\"")) {
-                tokenStart += 1;
-                tokenEnd = line.indexOf('\"', tokenStart);
-                parsedLine.add(line.substring(tokenStart, tokenEnd));
-                skip = 2;
-            } else {
-                tokenEnd = line.indexOf(',', tokenStart);
-                if (tokenEnd <= tokenStart) {
-                    tokenEnd = line.length();
-                }
-                parsedLine.add(line.substring(tokenStart, tokenEnd));
-                skip = 1;
-            }
+        while (line.length() > 0) {
+            line = parseNextToken(line);
         }
         return new StockQuotesData(parsedLine.toArray(new String[this.properties.size()]));
+    }
+
+    private String parseNextToken(String line) {
+        if (isNextPadding(line)) {
+            line = parsePaddedValueTokenAndReturnRest(line);
+        } else if (isNextAString(line)) {
+            line = parseStringTokenAndReturnRest(line);
+        } else {
+            line = parseNonStringTokenAndReturnRest(line);
+        }
+        return line;
+    }
+
+    private String parseCompanyTicker(String line) {
+        String resultLine = parseStringTokenAndReturnRest(line);
+        String ticker = parsedLine.get(parsedLine.size() - 1);
+
+        resultLine = resultLine.replace("\"" + ticker + "\"", PADDING);
+
+        return resultLine;
+    }
+
+    private String parsePaddedValueTokenAndReturnRest(String line) {
+        int tokenStart = PADDING.length() + 1; // skip symbol
+        int tokenEnd = line.indexOf(PADDING, tokenStart) - 1; // don't include last ,
+        int skip = 2;
+
+        parsedLine.add(line.substring(tokenStart, tokenEnd));
+
+        tokenEnd += PADDING.length();
+
+        return trimLineForNextToken(line, tokenEnd, skip);
+    }
+
+    private String parseStringTokenAndReturnRest(String line) {
+        int tokenEnd = line.indexOf('\"', 1);
+        int skip = 2;
+
+        parsedLine.add(line.substring(1, tokenEnd));
+        return trimLineForNextToken(line, tokenEnd, skip);
+    }
+
+    private String parseNonStringTokenAndReturnRest(String line) {
+        int tokenEnd = line.indexOf(',', 0);
+        int skip = 1;
+
+        parsedLine.add(line.substring(0, tokenEnd));
+
+        return trimLineForNextToken(line, tokenEnd, skip);
+    }
+
+    private String trimLineForNextToken(String line, int tokenEnd, int skip) {
+        final int nextStartPoint = tokenEnd + skip;
+
+        if (nextStartPoint >= line.length()) {
+            return "";
+        }
+
+        return line.substring(nextStartPoint);
+    }
+
+    private boolean isNextPadding(String line) {
+        return line.startsWith(PADDING);
+    }
+
+    private boolean isNextAString(String line) {
+        return line.startsWith("\"");
     }
 
 }
