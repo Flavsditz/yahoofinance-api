@@ -5,22 +5,25 @@ import yahoofinance.Utils;
 import yahoofinance.exchanges.ExchangeTimeZone;
 import yahoofinance.quotes.QuotesProperty;
 
+import java.util.List;
+
 /**
  *
  * @author Stijn Strickx
  */
 public class StockQuotesData {
-    
-    private final String[] data;
-    
-    public StockQuotesData(String[] data) {
+
+    private final List<String> data;
+
+    public StockQuotesData(List<String> data) {
         this.data = data;
     }
     
     public String getValue(QuotesProperty property) {
-        int i = StockQuotesRequest.DEFAULT_PROPERTIES.indexOf(property);
-        if(i >= 0 && i < this.data.length) {
-            return this.data[i];
+        int idx = StockProperties.getPropertyIndex(property);
+
+        if (idx >= 0 && idx < data.size()) {
+            return data.get(idx);
         }
         return null;
     }

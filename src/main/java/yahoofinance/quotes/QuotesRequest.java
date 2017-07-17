@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 
+import static yahoofinance.quotes.QuotesProperty.Symbol;
+
 /**
  *
  * @author Stijn Strickx
@@ -36,7 +38,13 @@ public abstract class QuotesRequest<T> {
     private String getFieldsString() {
         StringBuilder result = new StringBuilder();
         for (QuotesProperty property : this.properties) {
-            result.append(property.getTag());
+            if (property.isPadded()) {
+                result.append(Symbol.getTag());
+                result.append(property.getTag());
+                result.append(Symbol.getTag());
+            } else {
+                result.append(property.getTag());
+            }
         }
         return result.toString();
     }
